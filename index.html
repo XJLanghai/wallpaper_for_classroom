@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>25届10班多媒体壁纸</title>
+    <!--检测是否为手机-->
+    <script type="text/javascript">
+        if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {  
+            window.location = "rotation.html"; //移动端访问跳转页面
+        }
+    </script>
 	<!--弹出大学名称css-->
     <style>
         .text-popup {
@@ -77,6 +83,9 @@
         #script {
             font-family: hei;
             text-align: right;
+            position: fixed;
+            top: 0px;
+            right: 0px;
         }
         #schedule {
             position: absolute;
