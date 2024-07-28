@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>25届10班多媒体壁纸</title>
-    <!--检测是否为手机-->
+    <!--
     <script type="text/javascript">
         if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {  
             window.location = "rotation.html"; //移动端访问跳转页面
         }
     </script>
+    -->
     <style>
         @font-face {
             font-family: hei;
@@ -22,7 +23,7 @@
         body {
             justify-content: center;
             align-items: center;
-            background: black;
+            background: lightgray;
             transition: 2.0s;
         }
         #script {
@@ -31,15 +32,35 @@
             position: fixed;
             top: 10px;
             right: 10px;
-            color: white;
+            color: black;
             font-size: 1vw;
             transition: 2.0s;
+        }
+        #day {
+            height: 4vw;
+            position: absolute;
+            right: 1vw;
+            bottom: 4vh;
+            z-index: 0;
+            opacity: 0;
+            transition: 2.0s;
+            animation-timing-function: linear;
+        }
+        #night {
+            height: 4vw;
+            position: absolute;
+            right: 1vw;
+            bottom: 4vh;
+            z-index: 1;
+            opacity: 1;
+            transition: 2.0s;
+            animation-timing-function: linear;
         }
     </style>
     <!--countdown-->
     <style>
         #countdown {
-            color: white;
+            color: black;
             position: absolute;
             left: 350px;
             top: 50px;
@@ -55,7 +76,7 @@
     <!--datetime-->
     <style>
         #dateTime {
-            color: lightgray;
+            color: black;
             text-shadow: 0 0 1px white,0 0 2px white,0 0 3px white,0 0 4px white;
             position: absolute;
             top: 220px;
@@ -74,7 +95,7 @@
             top: 280px;
             left: 400px;
             transition: 2.0s;
-            color: lightgray;
+            color: black;
         }
         #schedule td {
             text-align: center;
@@ -348,9 +369,11 @@
             <td>20:00-20:40 & 20:50-22:10</td>
         </tr>
     </table>
-    <div id="script">Made by Zhang Han ①<br>Version 1.7</div>
-    <button type="button" onclick="document.getElementById('body').style.background = 'lightgray';document.getElementById('countdown').style.color = 'black';document.getElementById('dateTime').style.color = 'black';document.getElementById('schedule').style.color = 'black';document.getElementById('script').style.color = 'black'">单击我！</button>
-    <button type="button" onclick="document.getElementById('body').style.background = 'black';document.getElementById('countdown').style.color = 'white';document.getElementById('dateTime').style.color = 'lightgray';document.getElementById('schedule').style.color = 'lightgray';document.getElementById('script').style.color = 'white'">单击我！</button>
+    <div id="script">Made by Zhang Han ①<br>Version 2.0</div>
+    <div id="switch">
+        <img id="day" src="imgs/day.png" onclick="document.getElementById('day').style.zIndex = '0';document.getElementById('day').style.opacity = '0';document.getElementById('night').style.zIndex = '1';document.getElementById('night').style.opacity = '1';document.getElementById('body').style.background = 'lightgray';document.getElementById('countdown').style.color = 'black';document.getElementById('dateTime').style.color = 'black';document.getElementById('schedule').style.color = 'black';document.getElementById('script').style.color = 'black'">
+        <img id="night" src="imgs/night.png" onclick="document.getElementById('night').style.zIndex = '0';document.getElementById('night').style.opacity = '0';document.getElementById('day').style.zIndex = '1';document.getElementById('day').style.opacity = '1';document.getElementById('body').style.background = 'black';document.getElementById('countdown').style.color = 'white';document.getElementById('dateTime').style.color = 'lightgray';document.getElementById('schedule').style.color = 'lightgray';document.getElementById('script').style.color = 'white'">
+    </div>
 </body>
 <!--countdown-->
 <script>
