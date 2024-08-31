@@ -166,7 +166,7 @@
             position: absolute;
             top: 220px;
             left: 400px;
-            font-family: Monda;
+            font-family: hei;
             font-size: 48px;
             transition: 2.0s;
         }
@@ -306,7 +306,7 @@
           var dayOfWeek = daysOfWeek[now.getDay()];
       
           // 拼接完整的日期时间字符串
-          var dateTimeString = `${year}年${month}月${date}日 ${hours}:${minutes}:${seconds} ${dayOfWeek}`;
+          var dateTimeString = `${year}年${month}月${date}日 ${dayOfWeek} ${hours}:${minutes}:${seconds}`;
       
           // 获取页面中的dateTime元素
           var dateTimeElement = document.getElementById('dateTime');
