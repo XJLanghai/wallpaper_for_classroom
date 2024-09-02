@@ -4,6 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>25届10班多媒体壁纸</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 获取div元素
+            var div = document.getElementById('autoButton');
+            // 监听键盘事件
+            document.addEventListener('keydown', function(event) {
+                // 检查是否按下了数字1
+                if (event.key === '1') {
+                    // 触发div autoButton上的click事件
+                    div.click();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 获取div元素
+            var div = document.getElementById('day');
+            // 监听键盘事件
+            document.addEventListener('keydown', function(event) {
+                // 检查是否按下了数字2
+                if (event.key === '2') {
+                    // 触发div day上的click事件
+                    div.click();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 获取div元素
+            var div = document.getElementById('night');
+            // 监听键盘事件
+            document.addEventListener('keydown', function(event) {
+                // 检查是否按下了数字3
+                if (event.key === '3') {
+                    // 触发div night上的click事件
+                    div.click();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 获取div元素
+            var div = document.getElementById('建国75周年');
+            // 监听键盘事件
+            document.addEventListener('keydown', function(event) {
+                // 检查是否按下了数字4
+                if (event.key === '4') {
+                    // 触发div 建国75周年上的click事件
+                    div.click();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 监听键盘事件
+            document.addEventListener('keydown', function(event) {
+                // 检查是否按下了F5键
+                if (event.key === 'F5' || event.keyCode === 116) { // keyCode 116 is F5 in most browsers
+                    // 手动刷新页面
+                    location.reload();
+                }
+            });
+        });
+    </script>
     <!--
     <script type="text/javascript">
         if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iPad)/i))) {  
