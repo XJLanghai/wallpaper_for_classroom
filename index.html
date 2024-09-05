@@ -189,11 +189,11 @@
             position: fixed;
             top: -4096px;
             right: -4096px;
-            scale: 128;
+            scale: 256;
             transition: 2.0s;
         }
         #autoBackground {
-            transition: 2.0s;
+            transition: 5.0s;
         }
         #国旗 {
             width: 100vw;
@@ -245,6 +245,7 @@
             left: 400px;
             transition: 2.0s;
             color: black;
+            text-shadow: #000 0.5px 0 0, #000 0 0.5px 0, #000 -0.5px 0 0, #000 0 -0.5px 0;
         }
         #schedule td {
             text-align: center;
@@ -547,7 +548,7 @@
             <td>20:00-20:40 & 20:50-22:10</td>
         </tr>
     </table>
-    <div id="script">Made by Zhang Han ①<br>Version 24w36a</div>
+    <div id="script">Made by Zhang Han ①<br>Version 24w36b</div>
 
     <!--switch-->
     <div id="switch">
@@ -557,7 +558,8 @@
                                 document.getElementById('night').style.opacity = '0.5';document.getElementById('night').style.scale = '0.9';
                                 document.getElementById('body').style.background = 'white';document.getElementById('countdown').style.color = 'black';document.getElementById('dateTime').style.color = 'black';document.getElementById('schedule').style.color = 'black';document.getElementById('script').style.color = 'black';
                                 document.getElementById('eday').style.color = 'red';document.getElementById('ehour').style.color = 'red';document.getElementById('eminute').style.color = 'red';document.getElementById('esecond').style.color = 'red';
-                                document.getElementById('auto').style.opacity = '1';
+                                document.getElementById('auto').style.opacity = '1';document.getElementById('autoBackground').style.transform = 'rotate(1800deg)';
+                                document.getElementById('国旗').style.opacity = '0';
                                 document.getElementById('国旗').style.opacity = '0';">
             <p style="margin-top: -0.8vw;">A</p>
         </div>
@@ -600,7 +602,7 @@
                     const now = new Date();
                     const hour = now.getHours();
                     const secondsSinceMidnight = (now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds());
-                    const rotationDegrees = (secondsSinceMidnight / 86400) * 360 + 45;
+                    const rotationDegrees = (secondsSinceMidnight / 86400) * 360 + 38;
         
                     // 设置图片旋转
                     img.style.transform = `rotate(${rotationDegrees}deg)`;
@@ -609,7 +611,7 @@
                     var autoStyle = window.getComputedStyle(auto);
                     var opacity = parseFloat(autoStyle.getPropertyValue('opacity'));
                     if (opacity === 1) {
-                        if ( hour >= 18 || hour < 6) {
+                        if ( hour >= 19 || hour < 6) {
                             var countdown = document.getElementById('countdown');
                             countdown.style.color = 'white';
                             var dateTime = document.getElementById('dateTime');
@@ -631,7 +633,7 @@
                     };
                 }
         
-                // 每秒更新一次旋转角度和显示时间
+                // 每秒更新一次旋转角度
                 setInterval(rotateImageAndShowTime, 1000);
             </script>
         </div>
